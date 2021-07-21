@@ -145,7 +145,7 @@ namespace RelaxVersioner
             }
             var date = commit.Author.When;
             var gitCommitCounter = LookupGitTotalCommitCount(commit);
-            return new Version(gitCommitCounter,Int32.Parse(date.ToString("yyMMdd")), Int32.Parse(date.ToString("HHmmss")));
+            return new Version(date.Year*1000+ gitCommitCounter,Int32.Parse(date.ToString("MMdd")), Int32.Parse(date.ToString("HHmm")));
         }
         private static int LookupGitTotalCommitCount(Commit commit, Dictionary<Commit, int> rstDict = null)
         {

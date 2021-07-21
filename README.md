@@ -1,7 +1,7 @@
 # RelaxVersioner
 ![RelaxVersioner](Images/CenterCLR.RelaxVersioner.128.png)
 
-[![Japanese language](Images/Japanese.256.png)](https://github.com/kekyo/CenterCLR.RelaxVersioner/blob/master/README.ja.md)
+
 
 # Status
 
@@ -278,7 +278,7 @@ public:
       "safeVersion" specialized from "committer.When".
       (The format is safe-numerical-notate version string [2016.2.14.12345]. (Last number is 2sec prec.))
     -->
-    <Rule name="AssemblyFileVersion">{safeVersion}</Rule>
+    <Rule name="AssemblyFileVersion">1.{safeVersion}</Rule>
     
     <!--
       "commitId" is extracts commit id from git repository HEAD.
