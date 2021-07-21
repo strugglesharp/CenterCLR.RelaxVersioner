@@ -91,7 +91,7 @@ namespace RelaxVersioner
                             return "(unspecified)";
                         }
                     }
-                    
+
                     logger.Message(LogImportance.Low, "libgit2sharp.NativeLibraryPath, Path={0}", GetNativeLibraryPath());
 
                     try
@@ -139,12 +139,7 @@ namespace RelaxVersioner
 
         public static Version GetSafeVersionFromDate(DateTimeOffset date)
         {
-            // Second range: 0..43200 (2sec prec.)
-            return new Version(
-                date.Year,
-                date.Month,
-                date.Day,
-                (int)(date.TimeOfDay.TotalSeconds / 2));
+            return new Version(Int32.Parse(date.ToString("yyMMdd")), Int32.Parse(date.ToString("HHmmss")));
         }
 
         public static IEnumerable<XElement> LoadRuleSets(string candidatePath)
@@ -253,7 +248,7 @@ namespace RelaxVersioner
                     version.Minor.Value,
                     version.Build.Value + value);
             }
-            else if(version.Minor.HasValue)
+            else if (version.Minor.HasValue)
             {
                 return new Version(
                     version.Major,

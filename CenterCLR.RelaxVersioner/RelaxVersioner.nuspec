@@ -4,15 +4,15 @@
     <id>RelaxVersioner</id>
     <version>$PackageVersion$</version>
     <title>RelaxVersioner</title>
-    <authors>Kouji Matsui</authors>
-    <owners>Kouji Matsui</owners>
+    <authors>vivin</authors>
+    <owners>vivin</owners>
     <description>Easy-usage, Git-based, auto-generate version informations toolset.</description>
     <developmentDependency>true</developmentDependency>
     <summary>Easy-usage, Git-based, auto-generate version informations toolset.</summary>
     <copyright>Copyright (c) 2016-2021 Kouji Matsui</copyright>
     <license type="expression">Apache-2.0</license>
-    <projectUrl>https://github.com/kekyo/CenterCLR.RelaxVersioner</projectUrl>
-    <repository type="git" url="https://github.com/kekyo/CenterCLR.RelaxVersioner.git" branch="$RepositoryBranch$" commit="$RepositoryCommit$" />
+    <projectUrl>https://github.com/strugglesharp/CenterCLR.RelaxVersioner</projectUrl>
+    <repository type="git" url="https://github.com/strugglesharp/CenterCLR.RelaxVersioner.git" branch="$RepositoryBranch$" commit="$RepositoryCommit$" />
     <icon>CenterCLR.RelaxVersioner.100.png</icon>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <releaseNotes>$PackageReleaseNotes$</releaseNotes>

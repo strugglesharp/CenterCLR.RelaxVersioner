@@ -12,6 +12,8 @@
     <DevelopmentDependency>true</DevelopmentDependency>
     <NoPackageAnalysis>true</NoPackageAnalysis>
     <IncludeBuildOutput>false</IncludeBuildOutput>
+    <Authors>vivin</Authors>
+    <RepositoryUrl>https://github.com/strugglesharp/CenterCLR.RelaxVersioner.git</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>

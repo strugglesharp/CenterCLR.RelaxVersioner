@@ -394,7 +394,8 @@ When you are using a nuspec file to generate a NuGet package, there are addition
 ----
 
 ## History
-
+* 2.3.3:
+  * Set safeversion to gitlab and time
 * 2.3.2:
   * Fixed causing LibGit2SharpException built on VisualStudio for Mac.
 * 2.3.0:
