@@ -43,7 +43,7 @@
             "safeVersion" specialized from "committer.When".
             (The format is safe-numerical-notate version string [2016.2.14.12345]. (Last number is 2sec prec.))
         -->
-        <Rule name="AssemblyFileVersion">{safeVersion}</Rule>
+        <Rule name="AssemblyFileVersion">1.{safeVersion}</Rule>
 
         <!--
             "commitId" extracts commit id from git repository HEAD.

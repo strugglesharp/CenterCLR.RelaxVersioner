@@ -102,7 +102,7 @@ namespace RelaxVersioner
             {
                 // Extract an analysis commit.
                 var entry = scheduled.Pop();
-                
+
                 var currentCommit = entry.Commit;
                 var currentDepth = entry.StartDepth;
 
@@ -153,7 +153,7 @@ namespace RelaxVersioner
                         {
                             mainDepth = currentDepth;
                         }
-                        
+
                         // Goes to next scheduled commit.
                         break;
                     }
@@ -163,7 +163,7 @@ namespace RelaxVersioner
             // Finally got the main branch depth.
             return Utilities.IncrementLastVersionComponent(Version.Default, mainDepth);
         }
-
+         
         private static Result WriteVersionSourceFile(
             Logger logger,
             WriterBase writer,
@@ -201,7 +201,8 @@ namespace RelaxVersioner
                 ToArray();
             var tagsString = string.Join(",", tags);
 
-            var safeVersion = Utilities.GetSafeVersionFromDate(committer.When);
+         
+            var safeVersion = Utilities.GetSafeVersionFromDate(targetBranch?.Commits?.FirstOrDefault());
 
             Version versionLabel = default;
             Dictionary<string, object> keyValues = default;

@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFrameworks>net461;netcoreapp2.0;netcoreapp2.1;netcoreapp2.2;netcoreapp3.0;netcoreapp3.1;net5.0</TargetFrameworks>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
 
     <AssemblyName>rv</AssemblyName>
@@ -14,6 +14,8 @@
     <IncludeBuildOutput>false</IncludeBuildOutput>
     <Authors>vivin</Authors>
     <RepositoryUrl>https://github.com/strugglesharp/CenterCLR.RelaxVersioner.git</RepositoryUrl>
+    <ApplicationIcon />
+    <StartupObject />
   </PropertyGroup>
 
   <ItemGroup>

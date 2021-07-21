@@ -137,9 +137,44 @@ namespace RelaxVersioner
             return value;
         }
 
-        public static Version GetSafeVersionFromDate(DateTimeOffset date)
+        public static Version GetSafeVersionFromDate(Commit commit)
         {
-            return new Version(Int32.Parse(date.ToString("yyMMdd")), Int32.Parse(date.ToString("HHmmss")));
+            if(commit==null)
+            {
+                return new Version(0, 0, 0, 9999);
+            }
+            var date = commit.Author.When;
+            var gitCommitCounter = LookupGitTotalCommitCount(commit);
+            return new Version(gitCommitCounter,Int32.Parse(date.ToString("yyMMdd")), Int32.Parse(date.ToString("HHmmss")));
+        }
+        private static int LookupGitTotalCommitCount(Commit commit, Dictionary<Commit, int> rstDict = null)
+        {
+            if (commit == null)
+                return 9999;
+            if (rstDict == null)
+            {
+                rstDict = new Dictionary<Commit, int>();
+            }
+         //   Console.WriteLine(commit.Committer.When + ":" + commit.Id + ":" + commit.Message);
+
+            if (rstDict.TryGetValue(commit, out int rst))
+            {
+                return rst;
+            }
+
+            if (commit.Parents == null || commit.Parents.Count() == 0)
+            {
+                rstDict.Add(commit, 1);
+                return 1;
+            }
+            else
+            {
+                var allParetn = commit.Parents.Select(parentCommit => LookupGitTotalCommitCount(parentCommit, rstDict)).ToList();
+                var maxParetn = allParetn.Max();
+                var currRst = 1 + maxParetn;
+                rstDict.Add(commit, currRst);
+                return currRst;
+            }
         }
 
         public static IEnumerable<XElement> LoadRuleSets(string candidatePath)
