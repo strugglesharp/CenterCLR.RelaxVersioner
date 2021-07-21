@@ -394,6 +394,8 @@ When you are using a nuspec file to generate a NuGet package, there are addition
 ----
 
 ## History
+* 2.3.6:
+  * set safeversion UserInput.gitCommitCount.MMdd.HHmm
 * 2.3.3:
   * Set safeversion to gitlab and time
 * 2.3.2:
